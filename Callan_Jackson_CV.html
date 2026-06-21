@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Callan Jackson — CV</title>
+<style>
+  :root { --ink:#1a1a1a; --muted:#555; --accent:#1f4e79; --line:#d8dde3; }
+  * { box-sizing: border-box; }
+  html,body { margin:0; padding:0; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink); line-height: 1.42; font-size: 10.6pt;
+    background:#f3f4f6;
+  }
+  .page {
+    max-width: 820px; margin: 24px auto; background:#fff; padding: 40px 48px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.12);
+  }
+  header { border-bottom: 2.5px solid var(--accent); padding-bottom: 12px; margin-bottom: 16px; }
+  h1 { font-size: 25pt; margin: 0; letter-spacing: .3px; color: var(--ink); }
+  .role { font-size: 11.5pt; color: var(--accent); font-weight: 600; margin: 3px 0 8px; }
+  .contact { font-size: 9.4pt; color: var(--muted); }
+  .contact a { color: var(--muted); text-decoration: none; }
+  .contact span { white-space: nowrap; }
+  h2 {
+    font-size: 11pt; text-transform: uppercase; letter-spacing: 1.1px;
+    color: var(--accent); border-bottom: 1px solid var(--line);
+    padding-bottom: 3px; margin: 18px 0 9px;
+  }
+  p { margin: 0 0 8px; }
+  ul { margin: 4px 0 8px; padding-left: 17px; }
+  li { margin-bottom: 3px; }
+  .skills li { margin-bottom: 4px; }
+  .proj { margin-bottom: 11px; }
+  .proj .t { font-weight: 700; }
+  .proj .stack { color: var(--accent); font-size: 9.2pt; font-style: italic; display:block; margin: 1px 0 3px; }
+  .job-head { display:flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .job-head .title { font-weight: 700; }
+  .job-head .date { color: var(--muted); font-size: 9.3pt; white-space: nowrap; }
+  .edu .date { color: var(--muted); font-size: 9.3pt; }
+  .pending { font-style: italic; color: var(--muted); }
+  .note { background:#eef3f8; border-left:3px solid var(--accent); padding:7px 11px; font-size:9pt; color:var(--muted); margin: 0 0 14px; }
+  @media print {
+    body { background:#fff; font-size: 10.2pt; }
+    .page { box-shadow:none; margin:0; max-width:none; padding: 14mm 15mm; }
+    .note { display:none; }
+    h2 { margin-top: 13px; }
+    a { color: var(--muted); }
+  }
+  @page { size: A4; margin: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Callan Jackson</h1>
+    <div class="role">Junior Backend / Software Engineer — Python · Django</div>
+    <div class="contact">
+      <span>Brighton, UK — open to London &amp; hybrid/remote</span> &nbsp;·&nbsp;
+      <span><a href="mailto:callan38jackson@gmail.com">callan38jackson@gmail.com</a></span> &nbsp;·&nbsp;
+      <span><a href="https://github.com/callan-jackson">github.com/callan-jackson</a></span> &nbsp;·&nbsp;
+      <span><a href="https://www.linkedin.com/in/callan-jackson-449b64159">linkedin.com/in/callan-jackson</a></span> &nbsp;·&nbsp;
+      <span><a href="https://callan-jackson.github.io">callan-jackson.github.io</a></span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <p>Backend-focused software engineer who completed a BSc Computer Science (University of London / Goldsmiths) while working full time as cabin crew. I build production-shaped web applications: my projects use Django, PostgreSQL, Redis, Celery and Docker — including a containerised music-recommendation platform with real-time WebSocket search and resilient external-API integration. I'm looking for a junior backend or software engineering role where I can keep shipping reliable, well-tested services. Comfortable under pressure, detail-driven, and used to high-compliance, safety-critical environments.</p>
+  </section>
+
+  <section class="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> Python, JavaScript, SQL</li>
+      <li><strong>Backend &amp; frameworks:</strong> Django, Django REST Framework, Django Channels (WebSockets), Celery, Node.js / Express</li>
+      <li><strong>Databases &amp; caching:</strong> PostgreSQL, MySQL, Redis, DuckDB</li>
+      <li><strong>Infrastructure &amp; tooling:</strong> Docker, docker-compose, Git &amp; GitHub, REST API design, Linux, OpenAPI</li>
+      <li><strong>Data &amp; ML:</strong> pandas, NumPy, scikit-learn, TensorFlow / Keras, Matplotlib, Seaborn</li>
+      <li><strong>Concepts:</strong> OOP, database design &amp; normalisation, authentication &amp; role-based permissions, async / event-driven design, content-based recommendation</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="proj">
+      <span class="t">NextTrack — Content-Based Music Recommendation Platform <em>(Final Year Project)</em></span>
+      <span class="stack">Python · Django · Django Channels · PostgreSQL · Redis · Celery · Docker · NumPy</span>
+      <ul>
+        <li>Full-stack, containerised web app recommending tracks by acoustic similarity using a 5-dimensional audio-feature vector and Euclidean distance, with an adaptive centroid that learns from in-session like/dislike feedback.</li>
+        <li>Hybrid search combining a local catalogue with live Spotify queries, streamed to the UI in real time over WebSockets.</li>
+        <li>Integrated four external services (Spotify, MusicBrainz, Wikidata, Last.fm) with circuit-breaker patterns and graceful fallbacks for resilience when APIs fail.</li>
+      </ul>
+    </div>
+
+    <div class="proj">
+      <span class="t">eLearning Platform — Multi-Role Course Management System</span>
+      <span class="stack">Python · Django · Django REST Framework · Django Channels · Celery · PostgreSQL · Docker</span>
+      <ul>
+        <li>Role-based platform (student / teacher / admin) with course management, enrolment with capacity limits via atomic transactions, and validated file uploads.</li>
+        <li>Real-time per-course chat over authenticated WebSockets; background notifications via Celery.</li>
+        <li>Custom DRF permission classes and REST API; containerised with Docker for reproducible deployment.</li>
+      </ul>
+    </div>
+
+    <div class="proj">
+      <span class="t">easyJet Ops Intelligence — UK Aviation Punctuality Analytics</span>
+      <span class="stack">Python · DuckDB · scikit-learn · pandas</span>
+      <ul>
+        <li>Analytics pipeline exploring UK flight-punctuality data with DuckDB and machine learning — combining aviation domain knowledge with data engineering.</li>
+      </ul>
+    </div>
+
+    <div class="proj">
+      <span class="t">Evolving Mountain-Climbing Creatures — Genetic Algorithms</span>
+      <span class="stack">Python · PyBullet · NumPy</span>
+      <ul>
+        <li>Evolutionary simulation evolving virtual creatures to climb procedurally generated terrain in a physics engine.</li>
+        <li>Designed a custom stability-based fitness function to prevent reward-hacking; robust parallel evaluation (ProcessPoolExecutor with per-creature timeouts) for multi-hour runs.</li>
+      </ul>
+    </div>
+
+    <div class="proj">
+      <span class="t">Travel Destinations Database System</span>
+      <span class="stack">MySQL · Node.js · Express</span>
+      <ul>
+        <li>Designed a normalised relational schema (3NF) from raw CSV data with ER modelling; built a web interface supporting multi-criteria SQL queries (JOINs, GROUP BY, aggregation).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-head"><span class="title">Cabin Crew — easyJet</span><span class="date">London Gatwick · Feb 2023 – Present</span></div>
+      <ul>
+        <li>Deliver safety-critical procedures and customer service to hundreds of passengers per shift in a regulated, high-compliance environment.</li>
+        <li>Work effectively under time pressure within rotating crews; recognised for reliability and attention to detail.</li>
+        <li><strong>Completed a full BSc Computer Science alongside full-time shift work</strong> — four years of sustained self-directed study and time management.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><span class="title">Sales &amp; Installation — Soul Shutters</span><span class="date">2020 – Feb 2023</span></div>
+      <ul>
+        <li>Customer consultation and sales of bespoke window shutters; precise on-site measuring, fitting and installation requiring high accuracy.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><span class="title">Earlier roles</span><span class="date">2015 – 2020</span></div>
+      <ul>
+        <li>A range of customer-facing and operational roles across retail, hospitality and real estate.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="edu">
+    <h2>Education</h2>
+    <div class="job-head"><span class="title">BSc Computer Science — University of London</span><span class="date">Apr 2022 – Apr 2026</span></div>
+    <p style="margin-top:2px;">Academic direction by Goldsmiths, University of London · <span class="pending">Classification pending (final project under marking)</span></p>
+    <p style="margin-top:2px;">Relevant modules: Advanced Web Development, Databases &amp; Advanced Data Techniques, Machine Learning &amp; Neural Networks, Data Science, Artificial Intelligence, Algorithms &amp; Data Structures, Software Design &amp; Programming.</p>
+  </section>
+
+</div>
+</body>
+</html>
