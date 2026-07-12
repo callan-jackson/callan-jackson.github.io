@@ -19,17 +19,20 @@
     nav.classList.toggle('scrolled', window.scrollY > 30);
   }, { passive: true });
 
-  toggle.addEventListener('click', function () {
-    var open = links.classList.toggle('open');
+  function setMenu(open) {
+    links.classList.toggle('open', open);
     nav.classList.toggle('menu-open', open);
+    document.body.classList.toggle('no-scroll', open);
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  toggle.addEventListener('click', function () {
+    setMenu(!links.classList.contains('open'));
   });
   links.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      links.classList.remove('open');
-      nav.classList.remove('menu-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
+    a.addEventListener('click', function () { setMenu(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setMenu(false);
   });
 
   /* ---------- Reveal on scroll ---------- */
